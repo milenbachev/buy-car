@@ -1,0 +1,28 @@
+.header-container-fluid{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.header-nav-ul{
+    display: flex;
+    padding-right: 35px;
+}
+
+.header-nav-ul-li{
+    list-style-type: none;
+    padding: 15px;
+
+}
+
+.header-nav-ul-li-item{
+    text-decoration: none;
+}
+
+.navbar{
+    text-decoration: none;
+    padding-left: 35px;
+}
