@@ -13,11 +13,11 @@ function Login() {
                     <form id="login-form" method='POST'>
                         <div className='field'>
                             <label className='field-label' htmlFor='username'>Username</label>
-                            <input type="text" className="form-control" name='username' placeholder="username" />
+                            <input type="text" className="form-control" name='username'/>
                         </div>
                         <div className='field'>
                             <label className='field-label' htmlFor='password'>Password</label>
-                            <input type="password" className="form-control" name='password' placeholder="password" />
+                            <input type="password" className="form-control" name='password'/>
                         </div>
                         <div className="form-group">
                             <input type="submit" value="Login" className="btn" />
