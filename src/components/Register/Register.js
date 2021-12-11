@@ -1,6 +1,30 @@
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import {useContext} from 'react';
+
+import {AuthContext} from '../../contexts/AuthContext.js';
+import * as authService from '../../services/authService.js'
 
 function Register() {
+    const navigate = useNavigate();
+    const {login} = useContext(AuthContext);
+
+    const onRegisterHandler = (e) => {
+        e.preventDefault();
+
+        let formData = new FormData(e.currentTarget);
+
+        let email = formData.get('email');
+        let password = formData.get('password');
+
+        authService.register(email, password)
+            .then(authData =>{
+                login(authData)
+                navigate('/')
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
     return (
         <div className="container">
         <div className="card">
@@ -8,10 +32,10 @@ function Register() {
                 <h3>Register</h3>
             </div>
             <div className="card-body">
-                <form id="register-form" method='POST'>
+                <form id="register-form" method='POST' onSubmit={onRegisterHandler}>
                     <div className='field'>
-                        <label className='field-label' htmlFor='username'>Username</label>
-                        <input type="text" className="form-control" name='username' />
+                        <label className='field-label' htmlFor='email'>Email</label>
+                        <input type="text" className="form-control" name='email' />
                     </div>
                     <div className='field'>
                         <label className='field-label' htmlFor='password'>Password</label>
