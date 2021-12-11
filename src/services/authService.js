@@ -28,3 +28,11 @@ export async function register(email, password){
     });
     return await res.json();
 }
+
+export function logout(token){
+    return fetch(`${baseUrl}/users/logout`, {
+        headers: {
+            'X-Authorization': token
+        }
+    })
+}

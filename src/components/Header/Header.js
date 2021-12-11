@@ -44,8 +44,8 @@ function Header() {
                                 <Link className="header-nav-ul-li-item" to="/">Home</Link>
                             </li>
                             {user.email
-                                ? guestButton
-                                : userButton
+                                ? userButton 
+                                : guestButton
                             }
                         </ul>
                     </div>
