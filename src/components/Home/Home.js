@@ -1,6 +1,28 @@
-function Home(){
-    return(
-        <h1>Home page</h1>
+import { useState, useEffect } from 'react'
+
+import CarCard from "./CarCard/CarCard";
+import * as carService from '../../services/carService.js';
+
+function Home() {
+    const [cars, setCars] = useState([]);
+
+    useEffect(() => {
+        carService.getAll()
+            .then(result => {
+                setCars(result)
+            })
+    }, [])
+
+    return (
+        <div>
+            <h1>Home page</h1>
+            <div>
+                {cars.length > 0
+                    ? cars.map(x => <CarCard key={x._id} car={x} />)
+                    : <p>No car in database!</p>
+                }
+            </div>
+        </div>
     )
 }
 

@@ -11,3 +11,8 @@ export function createCar(carData, token){
     })
         .then(res => res.json())
 }
+
+export function getAll(){
+    return fetch(`${baseUrl}/cars`)
+        .then(res => res.json())
+}
