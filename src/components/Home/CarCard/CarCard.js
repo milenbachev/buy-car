@@ -1,5 +1,7 @@
 import {Link} from 'react-router-dom';
 
+import './CarCard.css'
+
 function CarCard({
     car
 }) {

@@ -1,0 +1,8 @@
+.conteiner-home{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    justify-content: flex-start;
+}

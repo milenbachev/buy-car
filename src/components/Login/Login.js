@@ -28,7 +28,7 @@ function Login() {
     }
     return (
         <div className="container">
-            <div className="card">
+            <div className="card-login">
                 <div className="card-header">
                     <h3>Sign In</h3>
                 </div>

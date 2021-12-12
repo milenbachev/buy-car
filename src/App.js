@@ -8,7 +8,7 @@ import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-import MyCars from './components/My-cars/My-cars';
+import MyCars from './components/My-cars/MyCars';
 import Create from './components/Create/Create';
 import Logout from './components/Logout/Logout';
 
