@@ -54,7 +54,7 @@ function Register() {
                 </div>
                 <div className="card-footer">
                     <div className="card-footer-links">
-                        You have an account?  <Link to="/login">Register</Link>
+                        You have an account?  <Link to="/login">Sign Up</Link>
                     </div>
                 </div>
             </div>
