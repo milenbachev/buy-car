@@ -1,0 +1,37 @@
+.card-details{
+    height: 600px;
+    width: 400px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+.details-body{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.detaile-body-item{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.button-owner{
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 20px 10px;
+    padding: 15px;
+}
+
+.button-owner.edit {
+    background-color: yellowgreen;
+    color: white;
+}
+
+.button-owner.delete{
+    background-color: red;
+    color: white;
+}

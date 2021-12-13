@@ -11,6 +11,7 @@ import Register from './components/Register/Register';
 import MyCars from './components/My-cars/MyCars';
 import Create from './components/Create/Create';
 import Logout from './components/Logout/Logout';
+import Details from './components/Details/Details';
 
 function App() {
   const [user, setUser] = useState({
@@ -43,6 +44,7 @@ function App() {
             <Route path="/my-cars" element={<MyCars />} />
             <Route path="/create" element={<Create />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/details/:carId" element={<Details />} />
           </Routes>
         </main>
       </div>

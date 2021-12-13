@@ -22,3 +22,8 @@ export function getMyCar(userId){
         .then(res => res.json())
         
 }
+
+export function getOne(id){
+    return fetch(`${baseUrl}/cars/${id}`)
+        .then(res => res.json())
+}

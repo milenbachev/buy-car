@@ -2,7 +2,9 @@ import {useContext, useEffect, useState} from 'react';
 
 import {AuthContext} from '../../contexts/AuthContext.js';
 import * as carService from '../../services/carService.js'
-import CarCard from '../Home/CarCard/CarCard.js';
+import CarCard from '../CarCard/CarCard.js';
+
+import './MyCars.css'
 
 function MyCars(){
     const [cars, setCars] = useState([]);
@@ -21,7 +23,7 @@ function MyCars(){
              <div className='conteiner-my-cars'>
                  {cars.length > 0 
                     ?cars.map(x => <CarCard key={x._id} car={x} />)
-                    : <p>You don't have car</p>}
+                    : <p className='p-my-cars'>You don't have car</p>}
              </div>
         </div>
     )
