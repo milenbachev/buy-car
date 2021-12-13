@@ -19,7 +19,8 @@
     align-items: flex-start;
 }
 
-.button-owner{
+.button-owner,
+.button-guest{
     text-decoration: none;
     border-radius: 8px;
     margin: 20px 10px;
@@ -33,5 +34,10 @@
 
 .button-owner.delete{
     background-color: red;
+    color: white;
+}
+
+.button-guest.like{
+    background-color: blueviolet;
     color: white;
 }

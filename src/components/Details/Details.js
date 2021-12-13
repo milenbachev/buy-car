@@ -11,9 +11,6 @@ function Details() {
     const [car, setCar] = useState({});
     const { carId } = useParams();
 
-    console.log(car);
-    console.log(user._id);
-    console.log(car._ownerId)
     useEffect(() => {
         carService.getOne(carId)
             .then(result => {
@@ -30,7 +27,7 @@ function Details() {
 
     const guestButton = (
         <div>
-            <Link className='button-guest' to="#">Like</Link>
+            <Link className='button-guest like' to="#">Like</Link>
         </div>
     )
 
