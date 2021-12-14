@@ -45,18 +45,18 @@ function Details() {
                 <Card.Title>{car.brand} {car.model}</Card.Title>
                 <div className='details-body'>
                     <div className='detaile-body-item'>
-                        <p className="card-text">Year: {car.year}</p>
-                        <p className="card-text">Engine: {car.engine}</p>
-                        <p className="card-text">Price: {car.price} $</p>
+                        <p className="card-text-details">Year: {car.year}</p>
+                        <p className="card-text-details">Engine: {car.engine}</p>
+                        <p className="card-text-details">Price: {car.price} $</p>
                     </div>
                     <div className='detaile-body-item'>
-                        <p className="card-text">Transmition: {car.transmission}</p>
-                        <p className="card-text">Color: {car.color}</p>
-                        <p className="card-text">Kilometers Traveled: {car.kilometersTraveled}</p>
+                        <p className="card-text-details">Transmition: {car.transmission}</p>
+                        <p className="card-text-details">Color: {car.color}</p>
+                        <p className="card-text-details">Kilometers Traveled: {car.kilometersTraveled}</p>
                     </div>
                 </div>
                 <div>
-                    <p className="card-text">Description: {car.description}</p>
+                    <p className="card-text-details">Description: {car.description}</p>
                 </div>
                 {user._id === car._ownerId
                     ? ownerButton

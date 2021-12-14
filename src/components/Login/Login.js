@@ -43,7 +43,7 @@ function Login() {
                             <input type="password" className="form-control" name='password'/>
                         </div>
                         <div className="form-group">
-                            <input type="submit" value="Login" className="btn" />
+                            <input type="submit" value="Login" className="btn-login" />
                         </div>
                     </form>
                 </div>
