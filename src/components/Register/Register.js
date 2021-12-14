@@ -48,7 +48,7 @@ function Register() {
                             <input type="password" className="form-control" name='repet-password' />
                         </div>
                         <div className="form-group">
-                            <input type="submit" value="Register" className="btn" />
+                            <input type="submit" value="Register" className="btn-register" />
                         </div>
                     </form>
                 </div>

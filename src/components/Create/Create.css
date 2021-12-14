@@ -1,15 +1,18 @@
 .create {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
-    height: 450px;
+    height: 500px;
     color:  white;
     background-color: #2baf8e80;
     width: 100%;
 }
 
 .form-header-create{
-    font-size: 28px;
     padding: 20px;
+}
+
+.form-header-create-title{
+    font-size: 36px;
 }
 
 .create-section{
@@ -49,6 +52,6 @@
     border-radius: 6px;
     border: none;
     background-color: white;
-    color: #711A8B;
+    color: #0A58CA;
 }
 

@@ -46,7 +46,7 @@ function Create() {
         <section className='create'>
             <form id='create-form' method='POST' onSubmit={onCarCreate}>
                 <div className='form-header-create'>
-                    <h3>Create car</h3>
+                    <h3 className='form-header-create-title'>Create car</h3>
                 </div>
                 <div className='create-section'>
                     <section className='create-section-first'>
