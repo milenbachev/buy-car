@@ -1,6 +1,4 @@
 .card{
-    height: 450px;
-    width: 400px;
     margin: 100px auto;
     display: flex;
     flex-direction: column;
@@ -14,11 +12,3 @@
     border-top-right-radius: 8px;
 }
 
-.card-text{
-    padding-bottom: 10px;
-}
-.btn-primary{
-    text-decoration: none;
-    background-color: rgb(43, 60, 214);
-    color: white;
-}
