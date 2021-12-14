@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap'
 
 import { AuthContext } from '../../contexts/AuthContext';
 import * as carService from '../../services/carService.js';
@@ -20,22 +21,28 @@ function Details() {
 
     const ownerButton = (
         <div>
-            <Link className='button-owner edit' to="/edit">Edit</Link>
-            <Link className='button-owner delete' to="/delete">Delete</Link>
+            <Link to="/edit" className='details-button'>
+                <Button variant='warning'>Edit</Button>
+            </Link>
+            <Link to="/delete" className='details-button'>
+                <Button variant='danger'>Delete</Button>
+            </Link>
         </div>
     )
 
     const guestButton = (
         <div>
-            <Link className='button-guest like' to="#">Like</Link>
+            <Link to="#">
+                <Button variant='info'>Like</Button>
+            </Link>
         </div>
     )
 
     return (
-        <div className="card-details">
-            <img className="card-img-top" src={car.img} alt={car.model} />
-            <div className="card-body">
-                <h2 className="card-title">{car.brand} {car.model}</h2>
+        <Card style={{ width: '26rem' }}>
+            <Card.Img variant="top" src={car.img} alt={car.model} />
+            <Card.Body>
+                <Card.Title>{car.brand} {car.model}</Card.Title>
                 <div className='details-body'>
                     <div className='detaile-body-item'>
                         <p className="card-text">Year: {car.year}</p>
@@ -51,14 +58,39 @@ function Details() {
                 <div>
                     <p className="card-text">Description: {car.description}</p>
                 </div>
-                    {user._id === car._ownerId
-                        ? ownerButton
-                        : guestButton
-                    }
-            </div>
-        </div>
+                {user._id === car._ownerId
+                    ? ownerButton
+                    : guestButton
+                }
+            </Card.Body>
+        </Card>
     )
 }
 
 export default Details
 
+ //<div className="card-details">
+            //<img className="card-img-top" src={car.img} alt={car.model} />
+            //<div className="card-body">
+                //<h2 className="card-title">{car.brand} {car.model}</h2>
+                //<div className='details-body'>
+                   // <div className='detaile-body-item'>
+                       // <p className="card-text">Year: {car.year}</p>
+                       // <p className="card-text">Engine: {car.engine}</p>
+                        //<p className="card-text">Price: {car.price} $</p>
+                   // </div>
+                    //<div className='detaile-body-item'>
+                       // <p className="card-text">Transmition: {car.transmission}</p>
+                       // <p className="card-text">Color: {car.color}</p>
+                        //<p className="card-text">Kilometers Traveled: {car.kilometersTraveled}</p>
+                   // </div>
+               // </div>
+               // <div>
+                    //<p className="card-text">Description: {car.description}</p>
+               // </div>
+                   //{user._id === car._ownerId
+                       // ? ownerButton
+                       // : guestButton
+                    //}
+            ///</div>
+        //</div>
