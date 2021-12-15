@@ -35,7 +35,7 @@ function App() {
   }
 
   return (
-    <AuthContext.Provider value={{user, login, logout}}>
+    <AuthContext.Provider value={{user, login, logout, isAuthenticated: Boolean(user.email)}}>
       <div id='container'>
         <Header />
         <main className="App">

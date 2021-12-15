@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 
+import { isAuth } from '../../hoc/isAuth.js'
 import { AuthContext } from '../../contexts/AuthContext.js';
 import * as carService from '../../services/carService.js';
 
@@ -113,4 +114,4 @@ function Create() {
     )
 }
 
-export default Create;
+export default isAuth(Create);
