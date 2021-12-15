@@ -2,9 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import {useState} from 'react';
 
-import { AuthContext } from './contexts/AuthContext.js';
+import { AuthProvider } from './contexts/AuthContext.js';
+
 
 import Home from './components/Home/Home';
 import Header from './components/Header/Header';
@@ -16,26 +16,9 @@ import Logout from './components/Logout/Logout';
 import Details from './components/Details/Details';
 
 function App() {
-  const [user, setUser] = useState({
-    _id: '',
-    email: '',
-    accessToken: ''
-  })
-
-  const login = (authDate) =>{
-    setUser(authDate)
-  }
-
-  const logout = () => {
-    setUser({
-      _id: '',
-      email: '',
-      accessToken: ''
-    })
-  }
 
   return (
-    <AuthContext.Provider value={{user, login, logout, isAuthenticated: Boolean(user.email)}}>
+    <AuthProvider >
       <div id='container'>
         <Header />
         <main className="App">
@@ -50,7 +33,7 @@ function App() {
           </Routes>
         </main>
       </div>
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 
