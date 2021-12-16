@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap'
 
 import { AuthContext } from '../../contexts/AuthContext';
@@ -8,6 +8,7 @@ import * as carService from '../../services/carService.js';
 import './Details.css'
 
 function Details() {
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [car, setCar] = useState({});
     const { carId } = useParams();
@@ -19,13 +20,22 @@ function Details() {
             })
     }, [carId])
 
+    const deleteHandler = (e) => {
+        e.preventDefault();
+
+        carService.deleteCar(carId, user.accessToken)
+            .then(() => {
+                navigate('/')
+            })
+    }
+
     const ownerButton = (
         <div>
             <Link to="/edit" className='details-button'>
                 <Button variant='warning'>Edit</Button>
             </Link>
             <Link to="/delete" className='details-button'>
-                <Button variant='danger'>Delete</Button>
+                <Button variant='danger'onClick={deleteHandler} >Delete</Button>
             </Link>
         </div>
     )

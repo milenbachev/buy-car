@@ -27,3 +27,25 @@ export function getOne(id){
     return fetch(`${baseUrl}/cars/${id}`)
         .then(res => res.json())
 }
+
+export function deleteCar(carId, token){
+    return fetch(`${baseUrl}/cars/${carId}`, {
+        method: 'DELETE',
+        headers: {
+            'X-Authorization': token
+        }
+    })
+    .then(res => res.json())
+}
+
+export function editCar(carData, token, id){
+    return fetch(`${baseUrl}/cars/${id}` , {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify(carData)
+    })
+        .then(res => res.json())     
+}

@@ -14,6 +14,7 @@ import MyCars from './components/My-cars/MyCars';
 import Create from './components/Create/Create';
 import Logout from './components/Logout/Logout';
 import Details from './components/Details/Details';
+import Edit from './components/Edit/Edit';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/create" element={<Create />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/details/:carId" element={<Details />} />
+            <Route path="/edit/:carId" element={<Edit />} />
           </Routes>
         </main>
       </div>
