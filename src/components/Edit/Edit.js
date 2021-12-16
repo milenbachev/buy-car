@@ -48,7 +48,7 @@ function Edit(){
            kilometersTraveled
        }, user.accessToken, carId)
         .then(() => {
-            navigate(`/`)
+            navigate(`/details/${carId}`)
         })
    }
 
