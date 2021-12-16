@@ -42,7 +42,6 @@ export function editCar(carData, token, id){
     return fetch(`${baseUrl}/cars/${id}` , {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json',
             'X-Authorization': token
         },
         body: JSON.stringify(carData)

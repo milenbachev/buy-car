@@ -10,6 +10,9 @@ function Edit(){
     const [car, setCar] = useState({});
     const carId = useParams();
 
+    console.log(carId);
+    console.log(car)
+
     useEffect(() => {
         carService.getOne(carId)
             .then(result => {
