@@ -1,0 +1,57 @@
+.edit {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    height: 500px;
+    color:  white;
+    background-color: #2baf8e80;
+    width: 100%;
+}
+
+.form-header-edit{
+    padding: 20px;
+}
+
+.form-header-edit-title{
+    font-size: 36px;
+}
+
+.edit-section{
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-element{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.form-element-label{
+    padding-right: 25px;
+}
+
+.form-input{
+    border: none; 
+    border-radius: 8px;
+}
+
+.edit-section-description{
+    margin-top: 45px;
+}
+
+.form-element-description{
+    display: flex;
+    justify-content: center;
+    border: none; 
+    border-radius: 8px;
+}
+
+.button-submit-edit{
+    margin-top: 22px;
+    padding: 15px;
+    border-radius: 6px;
+    border: none;
+    background-color: white;
+    color: #0A58CA;
+}
+
