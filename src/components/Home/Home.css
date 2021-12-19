@@ -1,12 +1,6 @@
 .conteiner-home{
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
-
-}
-
-.card{
-    justify-content: flex-start;
 }
 
 .p-home{

@@ -7,7 +7,7 @@ export function createCar(carData, token){
             'Content-Type': 'application/json',
             'X-Authorization': token
         },
-        body: JSON.stringify(carData)
+        body: JSON.stringify({...carData, post: []})
     })
         .then(res => res.json())
 }
@@ -48,3 +48,15 @@ export function editCar(carData, token, id){
     })
         .then(res => res.json())     
 }
+
+//export function post(carId, car, token){
+    //return fetch(`${baseUrl}/cars/${carId}`, {
+        //method: 'PUT',
+        //headers: {
+            //'Content-Type': 'application/json',
+            //'X-Authorization': token
+        //},
+        //body: JSON.stringify(car)
+    //})
+        //.then(res => res.json())
+//}

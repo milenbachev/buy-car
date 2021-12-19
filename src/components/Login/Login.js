@@ -36,11 +36,11 @@ function Login() {
                     <form id="login-form" method='POST' onSubmit={onLoginHandler}>
                         <div className='field'>
                             <label className='field-label' htmlFor='email'>Email</label>
-                            <input type="text" className="form-control" name='email'/>
+                            <input type="text" className="form-control" name='email'/>           
                         </div>
                         <div className='field'>
                             <label className='field-label' htmlFor='password'>Password</label>
-                            <input type="password" className="form-control" name='password'/>
+                            <input type="password" className="form-control" name='password' /> 
                         </div>
                         <div className="form-group">
                             <input type="submit" value="Login" className="btn-login" />

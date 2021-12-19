@@ -39,7 +39,7 @@ function Create() {
             img,
             kilometersTraveled
         }, user.accessToken)
-            .then(() => {
+            .then((res) => {
                 navigate('/')
             })
     }

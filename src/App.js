@@ -15,6 +15,8 @@ import Create from './components/Create/Create';
 import Logout from './components/Logout/Logout';
 import Details from './components/Details/Details';
 import Edit from './components/Edit/Edit';
+import CreatePost from './components/CreatePost/CreatePost';
+import AllPost from './components/AllPost/AllPost'
 
 function App() {
 
@@ -32,6 +34,8 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/details/:carId" element={<Details />} />
             <Route path="/edit/:carId" element={<Edit />} />
+            <Route path="/create-post" element={<CreatePost />} />
+            <Route path="/posts" element={<AllPost />} />
           </Routes>
         </main>
       </div>
