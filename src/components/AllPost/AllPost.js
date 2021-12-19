@@ -5,8 +5,6 @@ import * as postService from '../../services/postService.js';
 
 function CarPost(){
     const [posts, setPosts] = useState([]);
-    
-    console.log(posts)
 
     useEffect(() => {
         postService.getAllPost()

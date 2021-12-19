@@ -10,7 +10,6 @@ function Home() {
     //const [currentPage, setCurrentPage] = useState(1);
     //const [carsPerPage] = useState(3);
 
-    console.log(cars)
     useEffect(() => {
         carService.getAll()
             .then(result => {
