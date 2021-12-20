@@ -19,7 +19,7 @@ function CarPost(){
 
     return (
         <div>
-            <h1>Car all post</h1>
+            <h1>Cars all post</h1>
             <div>
                 {posts.length > 0
                     ? posts.map(x => <PostCard key={x._id} post={x}/>)

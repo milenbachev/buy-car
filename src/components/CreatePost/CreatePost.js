@@ -1,4 +1,4 @@
-import {  useNavigate, useParams} from "react-router-dom";
+import {  useNavigate} from "react-router-dom";
 import { useContext} from 'react';
 
 
@@ -11,7 +11,7 @@ import './CreatePost.css'
 function CreatePost() {
    const navigate = useNavigate();
    const { user } = useContext(AuthContext);
-   const carId = useParams();
+
 
    const onPostCreate = (e) => {
        e.preventDefault();
@@ -22,7 +22,7 @@ function CreatePost() {
 
        postService.createPost({
            name
-       }, user.accessToken, user._id, carId)
+       }, user.accessToken)
        .then(res => {
             navigate('/')
        })

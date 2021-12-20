@@ -3,7 +3,7 @@
 const baseUrl = 'http://localhost:3030/data';
 
 //export const createPost = (userId, carId, postData) => request.post(`${baseUrl}/posts`, {userId, carId, postData})
-export function createPost(postData, token, userId, carId){
+export function createPost(postData, token){
     return fetch(`${baseUrl}/posts`,{ 
         method: 'POST',
         headers: {
@@ -11,7 +11,7 @@ export function createPost(postData, token, userId, carId){
             'X-Authorization': token
         },
         body: JSON.stringify(postData)
-    }, {userId, carId})
+    })
         .then(res => res.json())
 }
 
