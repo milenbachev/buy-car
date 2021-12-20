@@ -1,6 +1,9 @@
+//import * as request from './requester.js';
+
 const baseUrl = 'http://localhost:3030/data';
 
-export function createPost(postData, token){
+//export const createPost = (userId, carId, postData) => request.post(`${baseUrl}/posts`, {userId, carId, postData})
+export function createPost(postData, token, userId, carId){
     return fetch(`${baseUrl}/posts`,{ 
         method: 'POST',
         headers: {
@@ -8,7 +11,7 @@ export function createPost(postData, token){
             'X-Authorization': token
         },
         body: JSON.stringify(postData)
-    })
+    }, {userId, carId})
         .then(res => res.json())
 }
 

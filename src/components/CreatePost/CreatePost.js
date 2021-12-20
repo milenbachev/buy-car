@@ -1,5 +1,5 @@
-import { useNavigate} from "react-router-dom";
-import { useContext } from 'react';
+import {  useNavigate, useParams} from "react-router-dom";
+import { useContext} from 'react';
 
 
 import { isAuth } from "../../hoc/isAuth";
@@ -9,24 +9,24 @@ import * as postService from '../../services/postService.js';
 import './CreatePost.css'
 
 function CreatePost() {
-    const navigate = useNavigate();
-    const { user } = useContext(AuthContext);
+   const navigate = useNavigate();
+   const { user } = useContext(AuthContext);
+   const carId = useParams();
 
-    const onPostCreate = (e) => {
-        e.preventDefault();
+   const onPostCreate = (e) => {
+       e.preventDefault();
 
-        let formData = new FormData(e.currentTarget);
+       let formData = new FormData(e.currentTarget);
 
-        let name = formData.get('name');
+       let name = formData.get('name');
 
-        postService.createPost({
-            name
-        }, user.accessToken)
-            .then(() => {
-                navigate('/')
-            })
-    }
-
+       postService.createPost({
+           name
+       }, user.accessToken, user._id, carId)
+       .then(res => {
+            navigate('/')
+       })
+   }
     return (
         <section className="create-post">
             <form id='create-post-form' className="create-post-form" method="POST" onSubmit={onPostCreate}>

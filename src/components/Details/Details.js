@@ -58,10 +58,10 @@ function Details() {
 
     const guestButton = (
         <div>
-            <Link to="/create-posts" className='details-button'>
+            <Link to={`/create-posts`} className='details-button'>  
                 <Button variant='info'>Create post</Button>
             </Link>
-            <Link to="/posts" className='details-button'>
+            <Link to={`/posts`} className='details-button'>
                 <Button variant='info'>All post</Button>
             </Link>
         </div>
