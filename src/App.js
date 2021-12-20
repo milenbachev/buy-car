@@ -34,8 +34,8 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/details/:carId" element={<Details />} />
             <Route path="/edit/:carId" element={<Edit />} />
-            <Route path="/create-posts" element={<CreatePost />} />
-            <Route path="/posts" element={<AllPost />} />
+            <Route path="/details/create-posts/:carId" element={<CreatePost />} />
+            <Route path="/details/posts/:carId" element={<AllPost />} />
           </Routes>
         </main>
       </div>

@@ -16,6 +16,6 @@ export function createPost(postData, token){
 }
 
 export function getAllPost(){
-    return fetch(`${baseUrl}/posts`)
+    return fetch(`${baseUrl}/posts?select=name`)
         .then(res => res.json());
 }

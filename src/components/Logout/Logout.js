@@ -14,7 +14,7 @@ function Logout(){
                 logout()
                 navigate('/')
             })
-    }, [])
+    }, [navigate, logout, user.accessToken])
     
     return(
        null

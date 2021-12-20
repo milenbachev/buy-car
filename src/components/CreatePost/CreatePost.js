@@ -1,18 +1,21 @@
-import {  useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { useContext} from 'react';
 
-
+//import useCarState from '../../hook/useCarState.js'
 import { isAuth } from "../../hoc/isAuth";
 import { AuthContext } from "../../contexts/AuthContext";
 import * as postService from '../../services/postService.js';
+
 
 import './CreatePost.css'
 
 function CreatePost() {
    const navigate = useNavigate();
    const { user } = useContext(AuthContext);
+   //const carId = useParams();
+   //const [car, setCar] = useCarState();
 
-
+   //console.log(carId);
    const onPostCreate = (e) => {
        e.preventDefault();
 
@@ -23,7 +26,7 @@ function CreatePost() {
        postService.createPost({
            name
        }, user.accessToken)
-       .then(res => {
+       .then(() => {
             navigate('/')
        })
    }
