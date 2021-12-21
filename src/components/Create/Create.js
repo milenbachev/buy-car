@@ -27,6 +27,7 @@ function Create() {
     
     useEffect(() => { 
         console.log(formError)
+        console.log(Object.keys(formError).length)
         if(Object.keys(formError).length === 0){
         
         }
@@ -36,13 +37,15 @@ function Create() {
         const {name, value} = e.target;
         setFormValue({...formValue, [name]: value})
         
-
         setFormError(validate(formValue))
     }
 
     const onCarCreate = (e) => {
         e.preventDefault();
 
+        if(Object.keys(formError).length > 0){
+            return
+        }
         let formData = new FormData(e.currentTarget);
 
         let brand = formData.get('brand');
