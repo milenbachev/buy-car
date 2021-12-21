@@ -154,7 +154,7 @@ function Edit(){
                     <label className='form-element-label' htmlFor='description'>Description</label>
                     <textarea rows='4' cols='100' className='form-element-description' name='description' defaultValue={car.description} onChange={onChangeHandler}/>
                 </div>
-                <p className='p-edit'>{formError.description}</p>
+                <p className='p-edit-description'>{formError.description}</p>
             </section>
             <input className='button-submit-create' type='submit' value='Save Change' />
         </form>

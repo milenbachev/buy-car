@@ -5,7 +5,7 @@ import { useContext} from 'react';
 import { isAuth } from "../../hoc/isAuth";
 import { AuthContext } from "../../contexts/AuthContext";
 import * as postService from '../../services/postService.js';
-
+//import * as carService from '../../services/carService.js'
 
 import './CreatePost.css'
 
@@ -13,9 +13,17 @@ function CreatePost() {
    const navigate = useNavigate();
    const { user } = useContext(AuthContext);
    //const carId = useParams();
-   //const [car, setCar] = useCarState();
+   //const [car, setCar] = useCarState(Object.values(carId));
+   //let curentCarId = Object.values(carId)
 
-   //console.log(carId);
+   //useEffect(() => {
+        //carService.getOne(curentCarId)
+        //.then(res => {
+            //setCar(res)
+       // })
+   //}, [curentCarId, setCar])
+
+   
    const onPostCreate = (e) => {
        e.preventDefault();
 
@@ -26,7 +34,8 @@ function CreatePost() {
        postService.createPost({
            name
        }, user.accessToken)
-       .then(() => {
+       .then(response => {
+            console.log(response)
             navigate('/')
        })
    }
