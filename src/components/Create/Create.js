@@ -1,15 +1,44 @@
 import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState, useEffect} from 'react';
 
 import { isAuth } from '../../hoc/isAuth.js'
 import { AuthContext } from '../../contexts/AuthContext.js';
 import * as carService from '../../services/carService.js';
+import {validate} from './createValidateForm.js'
 
 import './Create.css'
 
 function Create() {
+    const initialValue = {
+        brand: '',
+        model: '',
+        description: '',
+        price: '',
+        year: '',
+        color: '',
+        img: '',
+        kilometersTraveled: ''
+    }
     const navigate = useNavigate();
+    const [formValue, setFormValue] = useState(initialValue);
+    const [formError, setFormError] = useState({});
     const { user } = useContext(AuthContext);
+
+    
+    useEffect(() => { 
+        console.log(formError)
+        if(Object.keys(formError).length === 0){
+        
+        }
+    }, [formError])
+
+    const formHandlerChange = (e) => {
+        const {name, value} = e.target;
+        setFormValue({...formValue, [name]: value})
+        
+
+        setFormError(validate(formValue))
+    }
 
     const onCarCreate = (e) => {
         e.preventDefault();
@@ -53,36 +82,43 @@ function Create() {
                     <section className='create-section-first'>
                         <div className='form-element'>
                             <label className='form-element-label' htmlFor='brand'>Brand</label>
-                            <input type='text' className='form-input' name='brand' placeholder='Audi' />
+                            <input type='text' className='form-input' name='brand' placeholder='Audi' value={formValue.brand} onChange={formHandlerChange }/>
                         </div>
+                        <p className='p-create'>{formError.brand}</p>
                         <div className='form-element'>
                             <label className='form-element-label' htmlFor='model'>Model</label>
-                            <input type='text' className='form-input' name='model' placeholder='RS 6' />
+                            <input type='text' className='form-input' name='model' placeholder='RS 6' value={formValue.model} onChange={formHandlerChange } />
                         </div>
+                        <p className='p-create'>{formError.model}</p>
                         <div className='form-element'>
                             <label className='form-element-label' htmlFor='color'>Color</label>
-                            <input type='text' className='form-input' name='color' placeholder='red' />
+                            <input type='text' className='form-input' name='color' placeholder='red' value={formValue.color} onChange={formHandlerChange }/>
                         </div>
+                        <p className='p-create'>{formError.color}</p>
                     </section>
                     <section className='create-section-second'>
                         <div className='form-element'>
                             <label className='form-element-label' htmlFor='price'>Price</label>
-                            <input type='number' className='form-input' name='price' placeholder='1' />
+                            <input type='number' className='form-input' name='price' placeholder='1' value={formValue.price} onChange={formHandlerChange }/>
                         </div>
+                        <p className='p-create'>{formError.price}</p>
                         <div className='form-element'>
                             <label className='form-element-label' htmlFor='year'>Year</label>
-                            <input type='number' className='form-input' name='year' placeholder='2000' />
+                            <input type='number' className='form-input' name='year' placeholder='2000' value={formValue.year} onChange={formHandlerChange }/>
                         </div>
+                        <p className='p-create'>{formError.year}</p>
                         <div className='form-element'>
                             <label className='form-element-label' htmlFor='kilometersTraveled'>Kilometers Traveled</label>
-                            <input type='number' className='form-input' name='kilometersTraveled' placeholder='1' />
+                            <input type='number' className='form-input' name='kilometersTraveled' placeholder='1' value={formValue.kilometersTraveled} onChange={formHandlerChange }/>
                         </div>
+                        <p className='p-create'>{formError.kilometersTraveled}</p>
                     </section>
                     <section className='create-section-three'>
                         <div className='form-element'>
                             <label className='form-element-label' htmlFor='img'>Img</label>
-                            <input type='img' className='form-input' name='img' placeholder='url' />
+                            <input type='img' className='form-input' name='img' placeholder='url' value={formValue.img} onChange={formHandlerChange }/>
                         </div>
+                        <p className='p-create'>{formError.img}</p>
                         <div className='form-element'>
                             <label className='form-element-label' htmlFor='transmission'>Transmission</label>
                             <select name='transmission' className='form-input'>
@@ -105,8 +141,9 @@ function Create() {
                 <section className='create-section-description'>
                     <div className='form-element-description'>
                         <label className='form-element-label' htmlFor='description'>Description</label>
-                        <textarea rows='4' cols='100' className='form-element-description' name='description' placeholder='best car' />
+                        <textarea rows='4' cols='100' className='form-element-description' name='description' placeholder='best car' value={formValue.description} onChange={formHandlerChange }/>
                     </div>
+                    <p className='p-create-description'>{formError.description}</p>
                 </section>
                 <input className='button-submit-create' type='submit' value='Create Car' />
             </form>

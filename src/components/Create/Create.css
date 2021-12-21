@@ -1,7 +1,7 @@
 .create {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
-    height: 500px;
+    height: 700px;
     color:  white;
     background-color: #2baf8e80;
     width: 100%;
@@ -53,5 +53,14 @@
     border: none;
     background-color: white;
     color: #0A58CA;
+}
+
+.p-create{
+    color: red;
+    text-align: end;
+}
+.p-create-description{
+    color: red;
+    text-align: center;
 }
 
