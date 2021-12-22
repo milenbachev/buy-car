@@ -75,7 +75,7 @@ function Create() {
         }, user.accessToken)
             .then((res) => {
                 addNotification('Successfuly create car', types.success)
-                navigate('/')
+                navigate('/all-cars')
             })
     }
     return (

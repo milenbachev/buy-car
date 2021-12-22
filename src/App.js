@@ -18,6 +18,7 @@ import Edit from './components/Edit/Edit';
 import CreatePost from './components/CreatePost/CreatePost';
 import AllPost from './components/AllPost/AllPost';
 import Notification from './common/Notification/Notification';
+import AllCars from './components/AllCars/AllCars';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/all-cars" element={<AllCars />} />
               <Route path="/my-cars" element={<MyCars />} />
               <Route path="/create" element={<Create />} />
               <Route path="/logout" element={<Logout />} />

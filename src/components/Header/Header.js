@@ -44,6 +44,9 @@ function Header() {
                                 <Link className="header-nav-ul-li-item" to="/">Home</Link>
                             </li>
                             <li className="header-nav-ul-li">
+                                <Link className="header-nav-ul-li-item" to="/all-cars">All-Cars</Link>
+                            </li>
+                            <li className="header-nav-ul-li">
                                 <p className="header-nav-ul-li-item">{user.email}</p>
                             </li>
                             {user.email

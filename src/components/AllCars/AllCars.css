@@ -1,0 +1,20 @@
+.conteiner-allCars{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.container-allCars-search{
+    margin: 45px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.conteiner-allCars-body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.p-allCars{
+    margin: auto;
+}
