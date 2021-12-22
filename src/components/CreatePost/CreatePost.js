@@ -23,7 +23,7 @@ function CreatePost() {
        }, user.accessToken)
        .then(response => {
             //console.log(response)
-            navigate('/')
+            navigate('/all-cars')
        })
    }
     return (
