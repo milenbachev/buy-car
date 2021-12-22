@@ -3,6 +3,7 @@ import { useContext, useState, useEffect} from 'react';
 
 import { isAuth } from '../../hoc/isAuth.js'
 import { AuthContext } from '../../contexts/AuthContext.js';
+import {NotificationContext, types} from '../../contexts/NotificationContext.js'
 import * as carService from '../../services/carService.js';
 import {validate} from './createValidateForm.js'
 
@@ -23,6 +24,7 @@ function Create() {
     const [formValue, setFormValue] = useState(initialValue);
     const [formError, setFormError] = useState({});
     const { user } = useContext(AuthContext);
+    const {addNotification} = useContext(NotificationContext)
 
     
     useEffect(() => { 
@@ -72,6 +74,7 @@ function Create() {
             kilometersTraveled
         }, user.accessToken)
             .then((res) => {
+                addNotification('Successfuly create car', types.success)
                 navigate('/')
             })
     }

@@ -1,7 +1,6 @@
 import { useNavigate} from "react-router-dom";
 import { useContext} from 'react';
 
-//import useCarState from '../../hook/useCarState.js'
 import { isAuth } from "../../hoc/isAuth";
 import { AuthContext } from "../../contexts/AuthContext";
 import * as postService from '../../services/postService.js';
@@ -35,7 +34,7 @@ function CreatePost() {
            name
        }, user.accessToken)
        .then(response => {
-            console.log(response)
+            //console.log(response)
             navigate('/')
        })
    }

@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 
+import {isAuth} from '../../hoc/isAuth'
 import PostCard from '../PostCard/PostCard';
 import * as postService from '../../services/postService.js';
 
@@ -10,7 +11,7 @@ function CarPost(){
         postService.getAllPost()
             .then(result => {
                 setPosts(result)
-                console.log(result)
+                //console.log(result)
             })
             .catch(err => {
                 console.log(err)
@@ -30,5 +31,5 @@ function CarPost(){
     )
 }
 
-export default CarPost
+export default isAuth(CarPost)
 

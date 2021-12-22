@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 
 import { AuthContext } from '../../contexts/AuthContext.js';
+import {NotificationContext, types} from '../../contexts/NotificationContext'
 import * as authService from '../../services/authService.js';
 
 import './Register.css';
@@ -9,6 +10,7 @@ import './Register.css';
 function Register() {
     const navigate = useNavigate();
     const { login } = useContext(AuthContext);
+    const {addNotification} = useContext(NotificationContext)
 
     const onRegisterHandler = (e) => {
         e.preventDefault();
@@ -21,6 +23,7 @@ function Register() {
         authService.register(email, password)
             .then(authData => {
                 login(authData)
+                addNotification('You have registered successfully', types.success)
                 navigate('/')
             })
             .catch(err => {

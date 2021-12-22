@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import {useContext, useState, useEffect} from 'react';
 
 import {AuthContext} from '../../contexts/AuthContext.js';
+import {NotificationContext, types} from '../../contexts/NotificationContext'
 import * as authService from '../../services/authService.js';
 import {validate} from './loginValidation.js'
 
@@ -16,6 +17,7 @@ function Login() {
     const [formValue, setFormValue] = useState(initialValue);
     const [formError, setFormError] = useState({});
     const {login} = useContext(AuthContext);
+    const {addNotification} = useContext(NotificationContext);
 
     const formHandelChange = (e) => {
        const {name, value} = e.target;
@@ -40,8 +42,8 @@ function Login() {
 
         authService.login(email, password)
             .then((response) => {
-
                 login(response)
+                addNotification('You logged in successfully', types.success)
                 navigate('/')
             })
             .catch(err => {
