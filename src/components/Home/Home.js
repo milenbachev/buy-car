@@ -7,35 +7,61 @@ import './Home.css';
 
 function Home() {
     const [cars, setCars] = useState([]);
-    //const [currentPage, setCurrentPage] = useState(1);
-    //const [carsPerPage] = useState(3);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        carService.getAll()
+        if(searchTerm === '' || searchTerm === 'All'){
+            carService.getAll()
             .then(result => {
                 setCars(result)
             })
             .catch(err => {
                 console.log(err)
             })
-    }, [])
+        }else{
+            let brand = searchTerm
 
-    //const indexOfLastCar = currentPage * carsPerPage;
-    //const indexOfFirstCar = indexOfLastCar - carsPerPage;
-    //const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
+        carService.getCarByBrand(brand)
+            .then(response => {
+                setCars(response)
+            })
 
-    return (
-        <div>
-            <h1>Home page</h1>
-            <div className='conteiner-home'>
-            {cars.length > 0
+        }
+       
+    }, [searchTerm])
+
+    const onChangeHandler = (e) => {
+        const {name, value} = e.target
+        console.log(name)
+        console.log(value)
+        setSearchTerm(e.target.value);
+    }
+
+return (
+    <div>
+        <h1>Home page</h1>
+        <div className='conteiner-home'>
+            <div className='container-home-search'>
+                <div className='container-home-search-body'>
+                    <h6>Search by Brand</h6>
+                    <input type='text' name='brand' onChange={onChangeHandler} />
+                </div>
+                <div className='container-home-search-body'>
+                    <h6>Search by Model</h6>
+                    <input type='text' name='model' onChange={onChangeHandler} />
+                </div>
+                
+            </div>
+            <div className='conteiner-home-body'>
+                {cars.length > 0
                     ? cars.map(x => <CarCard key={x._id} car={x} />)
                     : <p className='p-home'>No car in database!</p>
                 }
-            
             </div>
+
         </div>
-    )
+    </div>
+)
 }
 
 export default Home

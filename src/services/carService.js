@@ -49,14 +49,12 @@ export function editCar(carData, token, id){
         .then(res => res.json())     
 }
 
-//export function post(carId, car, token){
-    //return fetch(`${baseUrl}/cars/${carId}`, {
-        //method: 'PUT',
-        //headers: {
-            //'Content-Type': 'application/json',
-            //'X-Authorization': token
-        //},
-        //body: JSON.stringify(car)
-    //})
-        //.then(res => res.json())
-//}
+export function getCarByBrand(brand){
+    return fetch(`${baseUrl}/cars?where=brand%3D"${brand}"`)
+        .then(res => res.json());
+}
+
+export function getCarByModel(model){
+    return fetch(`${baseUrl}/cars?where=brand%3D"${model}"`)
+        .then(res => res.json());
+}
