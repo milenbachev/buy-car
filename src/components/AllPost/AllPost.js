@@ -11,7 +11,6 @@ function CarPost(){
         postService.getAllPost()
             .then(result => {
                 setPosts(result)
-                //console.log(result)
             })
             .catch(err => {
                 console.log(err)

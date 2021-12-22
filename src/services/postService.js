@@ -1,8 +1,5 @@
-//import * as request from './requester.js';
-
 const baseUrl = 'http://localhost:3030/data';
 
-//export const createPost = (userId, carId, postData) => request.post(`${baseUrl}/posts`, {userId, carId, postData})
 export function createPost(postData, token){
     return fetch(`${baseUrl}/posts`,{ 
         method: 'POST',

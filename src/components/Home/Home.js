@@ -31,9 +31,6 @@ function Home() {
     }, [searchTerm])
 
     const onChangeHandler = (e) => {
-        const {name, value} = e.target
-        console.log(name)
-        console.log(value)
         setSearchTerm(e.target.value);
     }
 
@@ -46,11 +43,6 @@ return (
                     <h6>Search by Brand</h6>
                     <input type='text' name='brand' onChange={onChangeHandler} />
                 </div>
-                <div className='container-home-search-body'>
-                    <h6>Search by Model</h6>
-                    <input type='text' name='model' onChange={onChangeHandler} />
-                </div>
-                
             </div>
             <div className='conteiner-home-body'>
                 {cars.length > 0

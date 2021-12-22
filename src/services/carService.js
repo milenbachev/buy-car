@@ -54,7 +54,7 @@ export function getCarByBrand(brand){
         .then(res => res.json());
 }
 
-export function getCarByModel(model){
-    return fetch(`${baseUrl}/cars?where=brand%3D"${model}"`)
-        .then(res => res.json());
-}
+//export function getCarByModel(model){
+    //return fetch(`${baseUrl}/cars?where=brand%3D"${model}"`)
+        //.then(res => res.json());
+//}
