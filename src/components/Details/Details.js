@@ -27,7 +27,7 @@ function Details() {
 
         carService.deleteCar(carId, user.accessToken)
             .then(() => {
-                navigate('/')
+                navigate('/all-cars')
             })
             .finally(() => {
                 setShoulDeleteDialog(false);
